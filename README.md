@@ -45,7 +45,7 @@ For example:
 
 ## Example
 
-```pycon
+```py
 from laziness import lazy, lazify
 
 def expensive_work():
