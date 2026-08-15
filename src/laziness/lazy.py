@@ -36,4 +36,5 @@ def lazify[T](expression: Callable[[], T], /) -> T:
     def _hook(*_: Any) -> Any:
         return expression()
 
-    return lazy_hook(_hook, "lazify")
+    name = getattr(expression, "__name__", "lazify")
+    return lazy_hook(_hook, name)
