@@ -1,4 +1,4 @@
-#define Py_BUILD_CORE
+#define Py_BUILD_CORE_MODULE
 #include <Python.h>
 #include "internal/pycore_frame.h"
 #include "internal/pycore_lazyimportobject.h"
