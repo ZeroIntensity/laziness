@@ -1,5 +1,6 @@
 [build-system]
-requires = ["hatchling", "scikit-build-core[hatchling]"]
+# Twine doesn't support Hatch 1.32 yet: https://github.com/pypa/hatch/issues/2292
+requires = ["hatchling >= 1.26, < 1.32", "scikit-build-core[hatchling]"]
 build-backend = "hatchling.build"
 
 [project]
