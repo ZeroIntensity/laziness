@@ -27,4 +27,7 @@ Source = "https://github.com/ZeroIntensity/laziness"
 [tool.hatch.version]
 path = "src/laziness/__about__.py"
 
+[[tool.hatch.envs.hatch-test.matrix]]
+python = ["3.15"]
+
 [tool.hatch.build.targets.wheel.hooks.scikit-build]
