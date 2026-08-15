@@ -1,6 +1,9 @@
 from typing import Any
-from laziness import lazy, lazify
+
 from pytest import raises
+
+from laziness import lazify, lazy
+
 
 def _ignore(value: Any) -> None:
     """
@@ -8,8 +11,10 @@ def _ignore(value: Any) -> None:
     """
     eval("value")
 
+
 def test_lazy_evaluation():
     value = 0
+
     def evaluate():
         nonlocal value
         value += 1
@@ -22,6 +27,7 @@ def test_lazy_evaluation():
     special = lazify(evaluate)
     assert value == 1
     _ignore(special)
+
 
 def test_lazy_exceptions():
     def kaboom():
