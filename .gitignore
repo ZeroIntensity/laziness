@@ -1,0 +1,8 @@
+# Artifacts
+__pycache__/
+
+# Development
+/a.py
+/b.py
+/compile_flags.txt
+.venv/

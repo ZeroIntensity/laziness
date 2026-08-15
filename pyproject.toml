@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling", "scikit-build-core[hatchling]"]
+build-backend = "hatchling.build"
+
+[project]
+name = "laziness"
+dynamic = ["version"]
+description = 'Arbitrary lazy expressions for 3.15+'
+readme = "README.md"
+requires-python = ">=3.15"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Peter Bierma", email = "peter@python.org" },
+]
+classifiers = [
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.15",
+  "Programming Language :: Python :: Implementation :: CPython",
+]
+dependencies = []
+
+[project.urls]
+Issues = "https://github.com/ZeroIntensity/laziness/issues"
+Source = "https://github.com/ZeroIntensity/laziness"
+
+[tool.hatch.version]
+path = "src/laziness/__about__.py"
+
+[tool.hatch.build.targets.wheel.hooks.scikit-build]
