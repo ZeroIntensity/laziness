@@ -29,6 +29,22 @@ def test_lazy_evaluation():
     _ignore(special)
 
 
+def test_lazy_stack_offset():
+    value = 0
+
+    def evaluate():
+        nonlocal value
+        value += 1
+
+    def wrapped_lazy():
+        return lazy("evaluate()", stack_offset=2)
+
+    special = wrapped_lazy()
+    assert value == 0
+    _ignore(special)
+    assert value == 1
+
+
 def test_lazy_exceptions():
     def kaboom():
         raise ZeroDivisionError
