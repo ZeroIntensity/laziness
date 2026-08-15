@@ -13,12 +13,13 @@ def lazy(
     *,
     globals: dict[str, Any] | None = None,
     locals: Mapping[str, object] | None = None,
+    stack_offset: int = 1,
 ) -> Any:
     """
     Return an object that evaluates `source` upon access.
     """
 
-    frame = sys._getframe(1)
+    frame = sys._getframe(stack_offset)
 
     def _hook(*_: Any) -> Any:
         return eval(
