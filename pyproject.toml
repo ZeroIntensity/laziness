@@ -32,3 +32,8 @@ path = "src/laziness/__about__.py"
 python = ["3.15"]
 
 [tool.hatch.build.targets.wheel.hooks.scikit-build]
+
+[tool.cibuildwheel]
+build = "cp315-*"
+test-command = "pytest {project}/tests"
+test-requires = ["pytest"]
